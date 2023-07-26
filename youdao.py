@@ -98,6 +98,12 @@ def display(result):
     )
     if 'basic' in result:
         basic = result.get('basic')
+        ukp = f"/{basic.get('uk-phonetic')}/"
+        usp = f"/{basic.get('us-phonetic')}/"
+        display_value.append(
+            f"\n    英式: {ColorPrinter.red_value(ukp)}"
+            f"\n    美式: {ColorPrinter.red_value(usp)}"
+        )
 
         explains = basic.get("explains")
         if explains:
